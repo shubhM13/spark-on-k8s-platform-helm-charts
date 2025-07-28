@@ -10,3 +10,9 @@
 [submodule "aws-ebs-csi-driver"]
 	path = aws-ebs-csi-driver
 	url = https://github.com/kubernetes-sigs/aws-ebs-csi-driver
+[submodule "aws-efs-csi-driver"]
+	path = aws-efs-csi-driver
+	url = https://github.com/kubernetes-sigs/aws-efs-csi-driver.git
+[submodule "aws-fsx-csi-driver"]
+	path = aws-fsx-csi-driver
+	url = https://github.com/kubernetes-sigs/aws-fsx-csi-driver.git
