@@ -16,3 +16,6 @@
 [submodule "aws-fsx-csi-driver"]
 	path = aws-fsx-csi-driver
 	url = https://github.com/kubernetes-sigs/aws-fsx-csi-driver.git
+[submodule "amazon-vpc-cni-k8s"]
+	path = amazon-vpc-cni-k8s
+	url = https://github.com/aws/amazon-vpc-cni-k8s.git

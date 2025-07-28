@@ -8,6 +8,8 @@ This repository contains git submodules for popular Kubernetes platform helm cha
 |------------|---------|-------------|-------------|----------------|
 | **cluster-autoscaler** | 9.48.0 | 1.33.0 | Scales Kubernetes worker nodes within autoscaling groups | [Chart](https://github.com/kubernetes/autoscaler/tree/master/charts/cluster-autoscaler) |
 | **aws-load-balancer-controller** | 1.13.3 | v2.13.3 | AWS Load Balancer Controller Helm chart for Kubernetes | [Chart](https://github.com/kubernetes-sigs/aws-load-balancer-controller/tree/main/helm/aws-load-balancer-controller) |
+| **aws-vpc-cni** | 1.20.0 | v1.20.0 | A Helm chart for the AWS VPC CNI | [Chart](https://github.com/aws/amazon-vpc-cni-k8s/tree/master/charts/aws-vpc-cni) |
+| **cni-metrics-helper** | 1.20.0 | v1.20.0 | A Helm chart for the AWS VPC CNI Metrics Helper | [Chart](https://github.com/aws/amazon-vpc-cni-k8s/tree/master/charts/cni-metrics-helper) |
 | **aws-ebs-csi-driver** | 2.46.0 | 1.46.0 | A Helm chart for AWS EBS CSI Driver | [Chart](https://github.com/kubernetes-sigs/aws-ebs-csi-driver/tree/master/charts/aws-ebs-csi-driver) |
 | **aws-efs-csi-driver** | 3.2.1 | 2.1.10 | A Helm chart for AWS EFS CSI Driver | [Chart](https://github.com/kubernetes-sigs/aws-efs-csi-driver/tree/master/charts/aws-efs-csi-driver) |
 | **aws-fsx-csi-driver** | 1.11.0 | 1.4.0 | A Helm chart for AWS FSx for Lustre CSI Driver | [Chart](https://github.com/kubernetes-sigs/aws-fsx-csi-driver/tree/master/charts/aws-fsx-csi-driver) |
@@ -23,6 +25,10 @@ spark-on-k8s-platform-helm-charts/
 ├── aws-load-balancer-controller/  # Git submodule: kubernetes-sigs/aws-load-balancer-controller
 │   └── helm/
 │       └── aws-load-balancer-controller/  # AWS Load Balancer Controller Helm Chart
+├── amazon-vpc-cni-k8s/            # Git submodule: aws/amazon-vpc-cni-k8s
+│   └── charts/
+│       ├── aws-vpc-cni/           # AWS VPC CNI Helm Chart
+│       └── cni-metrics-helper/    # CNI Metrics Helper Helm Chart
 ├── aws-ebs-csi-driver/            # Git submodule: kubernetes-sigs/aws-ebs-csi-driver
 │   └── charts/
 │       └── aws-ebs-csi-driver/    # AWS EBS CSI Driver Helm Chart
@@ -49,6 +55,13 @@ spark-on-k8s-platform-helm-charts/
 - **Repository**: [kubernetes-sigs/aws-load-balancer-controller](https://github.com/kubernetes-sigs/aws-load-balancer-controller)
 - **Chart Path**: `aws-load-balancer-controller/helm/aws-load-balancer-controller/`
 - **Purpose**: Manages AWS Elastic Load Balancers for Kubernetes clusters running on AWS
+
+### AWS VPC CNI
+- **Repository**: [aws/amazon-vpc-cni-k8s](https://github.com/aws/amazon-vpc-cni-k8s)
+- **Chart Paths**: 
+  - `amazon-vpc-cni-k8s/charts/aws-vpc-cni/` (Main CNI plugin)
+  - `amazon-vpc-cni-k8s/charts/cni-metrics-helper/` (Metrics collection)
+- **Purpose**: Container Network Interface (CNI) plugin for Kubernetes using AWS VPC networking
 
 ### AWS EBS CSI Driver
 - **Repository**: [kubernetes-sigs/aws-ebs-csi-driver](https://github.com/kubernetes-sigs/aws-ebs-csi-driver)
@@ -89,6 +102,12 @@ helm install cluster-autoscaler ./autoscaler/charts/cluster-autoscaler/
 # Install AWS Load Balancer Controller
 helm install aws-load-balancer-controller ./aws-load-balancer-controller/helm/aws-load-balancer-controller/
 
+# Install AWS VPC CNI
+helm install aws-vpc-cni ./amazon-vpc-cni-k8s/charts/aws-vpc-cni/
+
+# Install CNI Metrics Helper (optional, for VPC CNI metrics)
+helm install cni-metrics-helper ./amazon-vpc-cni-k8s/charts/cni-metrics-helper/
+
 # Install AWS EBS CSI Driver
 helm install aws-ebs-csi-driver ./aws-ebs-csi-driver/charts/aws-ebs-csi-driver/
 
@@ -114,6 +133,7 @@ git submodule update --remote
 
 - [Kubernetes Autoscaler Documentation](https://github.com/kubernetes/autoscaler/tree/master/cluster-autoscaler)
 - [AWS Load Balancer Controller Documentation](https://kubernetes-sigs.github.io/aws-load-balancer-controller/)
+- [AWS VPC CNI Documentation](https://github.com/aws/amazon-vpc-cni-k8s)
 - [AWS EBS CSI Driver Documentation](https://github.com/kubernetes-sigs/aws-ebs-csi-driver)
 - [AWS EFS CSI Driver Documentation](https://github.com/kubernetes-sigs/aws-efs-csi-driver)
 - [AWS FSx CSI Driver Documentation](https://github.com/kubernetes-sigs/aws-fsx-csi-driver)
