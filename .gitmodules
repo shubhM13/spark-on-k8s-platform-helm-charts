@@ -1,0 +1,9 @@
+[submodule "aws-load-balancer-controller"]
+	path = aws-load-balancer-controller
+	url = https://github.com/kubernetes-sigs/aws-load-balancer-controller.git
+[submodule "metrics-server"]
+	path = metrics-server
+	url = https://github.com/kubernetes-sigs/metrics-server.git
+[submodule "autoscaler"]
+	path = autoscaler
+	url = https://github.com/kubernetes/autoscaler.git
