@@ -7,3 +7,6 @@
 [submodule "autoscaler"]
 	path = autoscaler
 	url = https://github.com/kubernetes/autoscaler.git
+[submodule "aws-ebs-csi-driver"]
+	path = aws-ebs-csi-driver
+	url = https://github.com/kubernetes-sigs/aws-ebs-csi-driver

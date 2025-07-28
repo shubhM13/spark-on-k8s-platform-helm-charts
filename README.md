@@ -8,6 +8,7 @@ This repository contains git submodules for popular Kubernetes platform helm cha
 |------------|---------|-------------|-------------|----------------|
 | **cluster-autoscaler** | 9.48.0 | 1.33.0 | Scales Kubernetes worker nodes within autoscaling groups | [Chart](https://github.com/kubernetes/autoscaler/tree/master/charts/cluster-autoscaler) |
 | **aws-load-balancer-controller** | 1.13.3 | v2.13.3 | AWS Load Balancer Controller Helm chart for Kubernetes | [Chart](https://github.com/kubernetes-sigs/aws-load-balancer-controller/tree/main/helm/aws-load-balancer-controller) |
+| **aws-ebs-csi-driver** | 2.46.0 | 1.46.0 | A Helm chart for AWS EBS CSI Driver | [Chart](https://github.com/kubernetes-sigs/aws-ebs-csi-driver/tree/master/charts/aws-ebs-csi-driver) |
 | **metrics-server** | 3.13.0 | 0.8.0 | Scalable, efficient source of container resource metrics for Kubernetes built-in autoscaling pipelines | [Chart](https://github.com/kubernetes-sigs/metrics-server/tree/master/charts/metrics-server) |
 
 ## Repository Structure
@@ -20,6 +21,9 @@ spark-on-k8s-platform-helm-charts/
 ├── aws-load-balancer-controller/  # Git submodule: kubernetes-sigs/aws-load-balancer-controller
 │   └── helm/
 │       └── aws-load-balancer-controller/  # AWS Load Balancer Controller Helm Chart
+├── aws-ebs-csi-driver/            # Git submodule: kubernetes-sigs/aws-ebs-csi-driver
+│   └── charts/
+│       └── aws-ebs-csi-driver/    # AWS EBS CSI Driver Helm Chart
 ├── metrics-server/                # Git submodule: kubernetes-sigs/metrics-server
 │   └── charts/
 │       └── metrics-server/        # Metrics Server Helm Chart
@@ -37,6 +41,11 @@ spark-on-k8s-platform-helm-charts/
 - **Repository**: [kubernetes-sigs/aws-load-balancer-controller](https://github.com/kubernetes-sigs/aws-load-balancer-controller)
 - **Chart Path**: `aws-load-balancer-controller/helm/aws-load-balancer-controller/`
 - **Purpose**: Manages AWS Elastic Load Balancers for Kubernetes clusters running on AWS
+
+### AWS EBS CSI Driver
+- **Repository**: [kubernetes-sigs/aws-ebs-csi-driver](https://github.com/kubernetes-sigs/aws-ebs-csi-driver)
+- **Chart Path**: `aws-ebs-csi-driver/charts/aws-ebs-csi-driver/`
+- **Purpose**: Container Storage Interface (CSI) driver for Amazon Elastic Block Store (EBS) volumes
 
 ### Metrics Server
 - **Repository**: [kubernetes-sigs/metrics-server](https://github.com/kubernetes-sigs/metrics-server)
@@ -62,6 +71,9 @@ helm install cluster-autoscaler ./autoscaler/charts/cluster-autoscaler/
 # Install AWS Load Balancer Controller
 helm install aws-load-balancer-controller ./aws-load-balancer-controller/helm/aws-load-balancer-controller/
 
+# Install AWS EBS CSI Driver
+helm install aws-ebs-csi-driver ./aws-ebs-csi-driver/charts/aws-ebs-csi-driver/
+
 # Install Metrics Server
 helm install metrics-server ./metrics-server/charts/metrics-server/
 ```
@@ -78,4 +90,5 @@ git submodule update --remote
 
 - [Kubernetes Autoscaler Documentation](https://github.com/kubernetes/autoscaler/tree/master/cluster-autoscaler)
 - [AWS Load Balancer Controller Documentation](https://kubernetes-sigs.github.io/aws-load-balancer-controller/)
+- [AWS EBS CSI Driver Documentation](https://github.com/kubernetes-sigs/aws-ebs-csi-driver)
 - [Metrics Server Documentation](https://github.com/kubernetes-sigs/metrics-server) 
