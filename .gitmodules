@@ -19,3 +19,6 @@
 [submodule "amazon-vpc-cni-k8s"]
 	path = amazon-vpc-cni-k8s
 	url = https://github.com/aws/amazon-vpc-cni-k8s.git
+[submodule "prometheus/helm-charts"]
+	path = prometheus/helm-charts
+	url = https://github.com/prometheus-community/helm-charts.git
